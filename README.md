@@ -106,7 +106,7 @@ To begin the project,first import the essential Python libraries( Numpy,Pandas) 
 
 ### Understanding Dataset
 
-checking how many no of columns and rows in the dataset
+Find how many no of columns and rows in the dataset
 
 <img width="1294" height="101" alt="Screenshot 2025-09-03 at 12 43 30" src="https://github.com/user-attachments/assets/99878854-9b40-4a11-bb65-e837de04e531" />
 
@@ -120,6 +120,9 @@ Summary of the dataset
 
 
 <img width="889" height="642" alt="Screenshot 2025-09-03 at 12 44 02" src="https://github.com/user-attachments/assets/1e3afc52-a3bd-4b39-9c1b-04dbfc401b1f" />
+
+
+### Exploratory Data Analysis
 
 
 #### Handling Missing values
@@ -165,6 +168,136 @@ loop iterates over through all independent features in the wine dataset. Uses Se
 <img width="697" height="1098" alt="Screenshot 2025-09-03 at 17 33 18" src="https://github.com/user-attachments/assets/c2fb412a-6286-4e2a-b56d-ee4278dd0f6e" />
 
 <img width="687" height="551" alt="Screenshot 2025-09-03 at 17 33 33" src="https://github.com/user-attachments/assets/46837ea0-84f4-4885-b8f0-c9885b703318" />
+
+#### Find Relationships Between Features using Correlation Matrix
+
+<img width="1154" height="161" alt="Screenshot 2025-09-03 at 18 03 43" src="https://github.com/user-attachments/assets/9d060f85-31dd-45fe-99b7-f5dc9a458fe8" />
+
+<img width="1345" height="966" alt="Screenshot 2025-09-03 at 18 04 37" src="https://github.com/user-attachments/assets/3f82ee83-fc76-4ff2-b5b8-2fd28d9771ef" />
+
+##### OBSERVATIONS FROM CORRELATION MATRIX
+
+* fixed acidity vs citric acid	+0.67	Wines with more fixed acidity tend to have more citric acid (they’re both acids).
+
+* fixed acidity ↔ density	+0.67	Higher acid levels make the wine slightly denser.
+
+* free SO₂ ↔ total SO₂	+0.67	Total SO₂ is largely driven by the free portion.
+
+* alcohol ↔ quality	+0.48	Higher‐alcohol wines are generally rated better.
+
+* pH ↔ fixed acidity	−0.69	As fixed acidity goes up, pH (acidity scale) goes down—chemically consistent.
+
+* pH ↔ density (r ≈ −0.36): Denser wines (more sugar/solids) tend to be more acidic (lower pH).
+
+Check Redundancy (Multicollinearity)
+
+If two features are very strongly correlated (r ≳ 0.8), consider dropping one:
+
+Here, free SO₂ vs total SO₂ (r ≈ 0.67)—not extreme, but keep an eye on it.
+
+fixed acidity vs citric acid are also strongly linked  so drop one or combine them.
+
+
+Relate to Your Target (quality) . Look at correlations with quality:
+
+* alcohol	+0.48	Good indicator of perceived quality
+
+* volatile acidity	−0.40	Vinegary taste lowers quality
+
+* sulphates	 +0.25	Somewhat positive (preservative effect)
+
+
+#### Visualize Relationship 
+
+Visualization supports the numerical correlation values we saw in the heatmap. 
+
+##### Visualize how Alcohol content affects wine Quality
+
+Below scatterplot shows how individual wines are distributed with respect to alcohol content (x-axis) and quality score (y-axis). sns.regplot(..., scatter=False) draws a regression line (best fit line). The red line shows the overall trend in the relationship.
+
+<img width="1155" height="132" alt="Screenshot 2025-09-03 at 20 32 19" src="https://github.com/user-attachments/assets/1539d64a-84fc-46b6-9390-81967d35beb3" />
+
+<img width="701" height="682" alt="Screenshot 2025-09-03 at 20 36 45" src="https://github.com/user-attachments/assets/0c3d6ded-be10-4952-b6b4-3420e38f0d9e" />
+
+
+##### Visualize how volatile acidity affects wine quality
+
+
+<img width="693" height="675" alt="Screenshot 2025-09-03 at 22 19 36" src="https://github.com/user-attachments/assets/981e6538-66c5-45c2-b743-98751872a78d" /> 
+
+
+#### Detect and Visualize outliers
+
+<img width="1136" height="496" alt="Screenshot 2025-09-03 at 22 23 29" src="https://github.com/user-attachments/assets/10bf87a0-259d-442f-944c-75e70dbe6a8c" />
+
+
+<img width="1201" height="1022" alt="Screenshot 2025-09-03 at 22 25 30" src="https://github.com/user-attachments/assets/2ac955f2-01c5-4f7d-8a99-639396d9f2f2" />
+
+
+
+### Data Preprocessessing
+
+#### Transforming highly skewed features
+
+First identify  Features with high skewness 
+
+<img width="1267" height="448" alt="Screenshot 2025-09-03 at 22 33 12" src="https://github.com/user-attachments/assets/eb6cdfab-bb85-4d72-8753-053d5198119f" />
+
+
+Transforming highly skewed features.(>_70) use np.sqrt when skew is moderate and that column data ≥ 0.
+
+
+<img width="1064" height="437" alt="Screenshot 2025-09-03 at 22 34 56" src="https://github.com/user-attachments/assets/c1dc5e2d-4516-4e07-af69-c8ca521b9373" />
+
+
+#### Converting the numeric wine quality scores into categorical labels
+
+The original dataset has wine quality as a numeric rating (0–10). But ML classification projects work better with categorical labels instead of many small numeric classes.
+So I group the scores into 3 broader categories:
+
+Low quality → 0–4
+
+Medium quality → 5–7
+
+High quality → 8–10
+
+Here I create a function that takes a wine’s quality numeric score as input and returns one of the three categories.
+
+<img width="707" height="267" alt="Screenshot 2025-09-03 at 22 43 36" src="https://github.com/user-attachments/assets/0c976c05-a18b-43c0-8215-246514b0ddfd" />
+
+apply this function to the dataframe wine_df
+
+<img width="903" height="64" alt="Screenshot 2025-09-03 at 22 44 12" src="https://github.com/user-attachments/assets/eb02cc54-2d2c-4986-889b-e4af8e892444" />
+
+
+
+#### Removing low variance feature based on correlation matrix
+
+The feature 'residual sugar' has very low correlation with the target (quality). It means they don’t help in predicting it.
+
+
+<img width="753" height="54" alt="Screenshot 2025-09-03 at 22 52 14" src="https://github.com/user-attachments/assets/758536e2-6102-4a7f-8016-17692b8a92c9" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
