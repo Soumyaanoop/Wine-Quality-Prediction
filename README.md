@@ -115,6 +115,10 @@ check the columns names
 <img width="1390" height="187" alt="Screenshot 2025-09-03 at 12 43 47" src="https://github.com/user-attachments/assets/0be1ceb2-7698-41c5-a8af-5234cb17a7a6" />
 
 
+
+Summary of the dataset
+
+
 <img width="889" height="642" alt="Screenshot 2025-09-03 at 12 44 02" src="https://github.com/user-attachments/assets/1e3afc52-a3bd-4b39-9c1b-04dbfc401b1f" />
 
 
@@ -123,7 +127,9 @@ check the columns names
 
 <img width="420" height="460" alt="Screenshot 2025-09-03 at 12 44 17" src="https://github.com/user-attachments/assets/cce9e361-0f16-44c8-b671-5f58d76f8d23" />
 
-shows no missing values in this dataset
+
+It shows no missing values in this dataset
+
 
 #### Finding Duplicates
 
@@ -135,23 +141,30 @@ Removing duplicates
 
 <img width="543" height="44" alt="Screenshot 2025-09-03 at 12 45 18" src="https://github.com/user-attachments/assets/ae222dd7-953c-4629-a57a-145581e86b5c" />
 
+
 #### check how values are spread for each feature
 
+Knowing the distribution of features is important because it helps identify skewness or outliers in data. Also it can suggest if scaling or transformations (like log, standardization) are needed.
 
-<img width="686" height="1107" alt="Screenshot 2025-09-03 at 13 22 42" src="https://github.com/user-attachments/assets/1764c822-9cb9-41a1-a61e-f662d17fadc2" />
+ <img width="1199" height="225" alt="Screenshot 2025-09-03 at 13 22 14" src="https://github.com/user-attachments/assets/8616697f-36b9-4cf0-ab6b-549fa8f2f0f0" />
 
-<img width="657" height="1107" alt="Screenshot 2025-09-03 at 13 23 24" src="https://github.com/user-attachments/assets/d41db1dc-dc6c-4a3f-8b71-1f0479d4dc6b" />
-
-<img width="670" height="1113" alt="Screenshot 2025-09-03 at 13 23 40" src="https://github.com/user-attachments/assets/a4eae245-5a3f-4f2a-9d1f-a0fa0950cbbf" />
-<img width="673" height="1119" alt="Screenshot 2025-09-03 at 13 24 00" src="https://github.com/user-attachments/assets/8f927f7d-94df-419a-9456-64ed30cf9e36" />
-<img width="667" height="1096" alt="Screenshot 2025-09-03 at 13 24 17" src="https://github.com/user-attachments/assets/bc2e4aa7-7237-449d-9546-d941b96cf2cc" />
-
-<img width="677" height="555" alt="Screenshot 2025-09-03 at 13 24 32" src="https://github.com/user-attachments/assets/dc9f7105-c482-4db3-b4b1-554615e2ca88" />
+loop iterates over through all independent features in the wine dataset. Uses Seaborn’s histplot to plot the distribution of each feature. kde=True → This makes it easier to understand the underlying distribution pattern.
 
 
+<img width="669" height="520" alt="Screenshot 2025-09-03 at 17 30 54" src="https://github.com/user-attachments/assets/a05b0d3d-da3c-436a-83e9-8680c67ca40c" />    <img width="672" height="551" alt="Screenshot 2025-09-03 at 17 31 17" src="https://github.com/user-attachments/assets/f35df8ed-7337-46ff-9557-c94fc4d9bccc" />
 
 
+<img width="670" height="541" alt="Screenshot 2025-09-03 at 17 31 39" src="https://github.com/user-attachments/assets/ff422573-8c30-45b1-b9d7-0a3ac98e0978" />     <img width="676" height="534" alt="Screenshot 2025-09-03 at 17 31 57" src="https://github.com/user-attachments/assets/bdef4c10-8136-4748-9123-10c74c9c89a2" />
 
+
+<img width="677" height="536" alt="Screenshot 2025-09-03 at 17 32 17" src="https://github.com/user-attachments/assets/fe3508b2-df19-498b-84f1-9ba8e1be08ab" />      <img width="676" height="542" alt="Screenshot 2025-09-03 at 17 32 36" src="https://github.com/user-attachments/assets/fb4ebb06-d501-4915-a78c-da301f5839dd" />
+
+
+<img width="697" height="1087" alt="Screenshot 2025-09-03 at 17 32 58" src="https://github.com/user-attachments/assets/54e6bff2-6348-4245-a262-5f435f3fa978" />
+
+<img width="697" height="1098" alt="Screenshot 2025-09-03 at 17 33 18" src="https://github.com/user-attachments/assets/c2fb412a-6286-4e2a-b56d-ee4278dd0f6e" />
+
+<img width="687" height="551" alt="Screenshot 2025-09-03 at 17 33 33" src="https://github.com/user-attachments/assets/46837ea0-84f4-4885-b8f0-c9885b703318" />
 
 
 
