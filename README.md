@@ -154,41 +154,75 @@ Knowing the distribution of features is important because it helps identify skew
 
 loop iterates over through all independent features in the wine dataset. Uses Seaborn’s histplot to plot the distribution of each feature. kde=True → This makes it easier to understand the underlying distribution pattern.
 
+<img width="456" height="402" alt="Screenshot 2025-09-06 at 21 58 23" src="https://github.com/user-attachments/assets/7a8d1d1c-3afd-4353-83b8-025304286f17" />
 
-<img width="669" height="520" alt="Screenshot 2025-09-03 at 17 30 54" src="https://github.com/user-attachments/assets/a05b0d3d-da3c-436a-83e9-8680c67ca40c" />    <img width="672" height="551" alt="Screenshot 2025-09-03 at 17 31 17" src="https://github.com/user-attachments/assets/f35df8ed-7337-46ff-9557-c94fc4d9bccc" />
-
-
-<img width="670" height="541" alt="Screenshot 2025-09-03 at 17 31 39" src="https://github.com/user-attachments/assets/ff422573-8c30-45b1-b9d7-0a3ac98e0978" />     <img width="676" height="534" alt="Screenshot 2025-09-03 at 17 31 57" src="https://github.com/user-attachments/assets/bdef4c10-8136-4748-9123-10c74c9c89a2" />
+Fixed Acidity : The distribution is right-skewed, with most wines having acidity between 6 and 10.This indicates that extreme acidity values are rare.
 
 
-<img width="677" height="536" alt="Screenshot 2025-09-03 at 17 32 17" src="https://github.com/user-attachments/assets/fe3508b2-df19-498b-84f1-9ba8e1be08ab" />      <img width="676" height="542" alt="Screenshot 2025-09-03 at 17 32 36" src="https://github.com/user-attachments/assets/fb4ebb06-d501-4915-a78c-da301f5839dd" />
+<img width="485" height="403" alt="Screenshot 2025-09-06 at 21 58 41" src="https://github.com/user-attachments/assets/1264022a-106d-4e3f-9db1-2f742ac8fef6" />
+
+Volatile Acidity : Distribution is also right-skewed. Most values fall between 0.3 and 0.7, with few extreme values above 1.
+Since volatile acidity contributes to unpleasant vinegar-like taste, most wines stay within acceptable ranges.
 
 
-<img width="697" height="1087" alt="Screenshot 2025-09-03 at 17 32 58" src="https://github.com/user-attachments/assets/54e6bff2-6348-4245-a262-5f435f3fa978" />
+<img width="452" height="412" alt="Screenshot 2025-09-06 at 21 58 58" src="https://github.com/user-attachments/assets/1298b1b2-0aa7-4258-bf9a-c9b85528a19a" />
 
-<img width="697" height="1098" alt="Screenshot 2025-09-03 at 17 33 18" src="https://github.com/user-attachments/assets/c2fb412a-6286-4e2a-b56d-ee4278dd0f6e" />
+The distribution shows a high concentration near 0 means many wines contain little or no citric acid. Indicates citric acid is not a dominant feature in most wines.
 
-<img width="687" height="551" alt="Screenshot 2025-09-03 at 17 33 33" src="https://github.com/user-attachments/assets/46837ea0-84f4-4885-b8f0-c9885b703318" />
+<img width="484" height="412" alt="Screenshot 2025-09-06 at 21 59 15" src="https://github.com/user-attachments/assets/b77a668f-bb62-4351-b56a-34b4b65c8123" />
+
+Residual Sugar: Strong right-skewness. A few wines representing sweet wines.
+
+<img width="447" height="413" alt="Screenshot 2025-09-06 at 21 59 27" src="https://github.com/user-attachments/assets/3de464e8-fd1e-427f-9f84-6bb769a8b421" />
+
+Chlorides : The distribution is heavily right-skewed. Most wines have chloride content close to 0.04, with rare extreme cases above 0.2.
+
+<img width="530" height="396" alt="Screenshot 2025-09-06 at 21 59 41" src="https://github.com/user-attachments/assets/5c0c69f7-3295-4ff6-a0ac-f12efcb8fc9a" />
+
+Free Sulfur Dioxide : The distribution is skewed to the right. Most values lie between 0 and 30
+
+
+<img width="522" height="407" alt="Screenshot 2025-09-06 at 22 00 09" src="https://github.com/user-attachments/assets/c83c50f3-c648-47a8-9dba-6120eac85c8e" />
+
+Total Sulfur Dioxide : Similar to free SO₂, but with wider spread. Most values lie between 20 and 100, with a long tail extending beyond 200.
+
+<img width="456" height="405" alt="Screenshot 2025-09-06 at 22 00 25" src="https://github.com/user-attachments/assets/bd3a9cc0-27bc-439f-bf11-78bd8b448b14" />
+
+Density : The distribution is nearly normal (bell-shaped). This reflects the typical density of wine, with only small variations.
+
+<img width="436" height="400" alt="Screenshot 2025-09-06 at 22 00 45" src="https://github.com/user-attachments/assets/57b0a3a3-7c46-4daa-9807-ba9447939cba" />
+
+pH : The pH distribution is close to normal. Indicates most wines have typical acidity levels.
+
+<img width="458" height="418" alt="Screenshot 2025-09-06 at 22 01 00" src="https://github.com/user-attachments/assets/73f34d10-988f-493e-b330-e24610d830ee" />
+
+Sulphates : Right-skewed distribution.
+
+<img width="439" height="410" alt="Screenshot 2025-09-06 at 22 01 13" src="https://github.com/user-attachments/assets/fd8cd6fa-2d98-4eb0-972e-705d8ae9483a" />
+
+The alcohol content ranges from around 8% to 15%, with the majority of wines clustered between 9% and 12%.
+The distribution is slightly right-skewed, meaning there are more wines with lower alcohol levels, and fewer wines with very high alcohol content.
+
 
 #### Find Relationships Between Features using Correlation Matrix
 
+The correlation matrix provides insights into how different chemical properties of wine are related to each other and to wine quality.
+
 <img width="1154" height="161" alt="Screenshot 2025-09-03 at 18 03 43" src="https://github.com/user-attachments/assets/9d060f85-31dd-45fe-99b7-f5dc9a458fe8" />
 
-<img width="1345" height="966" alt="Screenshot 2025-09-03 at 18 04 37" src="https://github.com/user-attachments/assets/3f82ee83-fc76-4ff2-b5b8-2fd28d9771ef" />
+<img width="1345" height="966" alt="correlation_matrix_wine" src="https://github.com/user-attachments/assets/8fb6ec29-e95e-43bf-b282-1eb6a2656904" />
+
+
 
 #### OBSERVATIONS FROM CORRELATION MATRIX
 
-* fixed acidity vs citric acid	+0.67	Wines with more fixed acidity tend to have more citric acid (they’re both acids).
+Relate to Target (quality) . Look at correlations with quality:
 
-* fixed acidity ↔ density	+0.67	Higher acid levels make the wine slightly denser.
+* alcohol	+0.48	Good indicator of perceived quality
 
-* free SO₂ ↔ total SO₂	+0.67	Total SO₂ is largely driven by the free portion.
+* volatile acidity	−0.40	Vinegary taste lowers quality
 
-* alcohol ↔ quality	+0.48	Higher‐alcohol wines are generally rated better.
-
-* pH ↔ fixed acidity	−0.69	As fixed acidity goes up, pH (acidity scale) goes down—chemically consistent.
-
-* pH ↔ density (r ≈ −0.36): Denser wines (more sugar/solids) tend to be more acidic (lower pH).
+* sulphates	 +0.25	Somewhat positive (preservative effect)
 
 Check Redundancy (Multicollinearity)
 
@@ -198,14 +232,13 @@ Here, free SO₂ vs total SO₂ (r ≈ 0.67)—not extreme, but keep an eye on i
 
 fixed acidity vs citric acid are also strongly linked  so drop one or combine them.
 
+Summary
 
-Relate to Your Target (quality) . Look at correlations with quality:
+Most Influential Features for Quality Prediction: Alcohol, Volatile Acidity, Sulphates, Citric Acid.
 
-* alcohol	+0.48	Good indicator of perceived quality
+Redundant/Highly Correlated Features: Free Sulfur Dioxide and Total Sulfur Dioxide; Fixed Acidity and Density. These may require dimensionality reduction or careful feature selection.
 
-* volatile acidity	−0.40	Vinegary taste lowers quality
-
-* sulphates	 +0.25	Somewhat positive (preservative effect)
+Negligible Features: Residual sugar and chlorides may contribute little to quality prediction.
 
 
 
@@ -215,13 +248,21 @@ Below scatterplot shows how individual wines are distributed with respect to alc
 
 <img width="1155" height="132" alt="Screenshot 2025-09-03 at 20 32 19" src="https://github.com/user-attachments/assets/1539d64a-84fc-46b6-9390-81967d35beb3" />
 
-<img width="701" height="682" alt="Screenshot 2025-09-03 at 20 36 45" src="https://github.com/user-attachments/assets/0c3d6ded-be10-4952-b6b4-3420e38f0d9e" />
+<img width="701" height="682" alt="Alcoholvsquality" src="https://github.com/user-attachments/assets/59c0ccc0-1f6e-4e12-a5b9-2e6cf413e87a" />
+
+
+The regression line (in red) indicates a clear upward trend: as the alcohol percentage increases, the wine quality scores also tend to increase. 
+
+
 
 
 #### Visualize how volatile acidity affects wine quality
 
 
 <img width="693" height="675" alt="Screenshot 2025-09-03 at 22 19 36" src="https://github.com/user-attachments/assets/981e6538-66c5-45c2-b743-98751872a78d" /> 
+
+<img width="693" height="675" alt="acidityvsquality" src="https://github.com/user-attachments/assets/b006cef9-b769-40b4-b355-943fd987a64f" />
+
 
 
 #### Detect and Visualize outliers
