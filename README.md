@@ -11,7 +11,7 @@ This project applies machine learning classification techniques to predict the q
 
    - Handle missing values, normalize features, and prepare the data for classification.  
 
-3. Exploratory Data Analysis (EDA)
+2. Exploratory Data Analysis (EDA)
 
    - Visualize the distribution of wine quality scores.  
 
@@ -19,7 +19,7 @@ This project applies machine learning classification techniques to predict the q
 
    - Highlight the most influential attributes (e.g., alcohol, acidity).  
 
-5. Model Development 
+3. Model Development 
 
     - Apply multiple machine learning classification algorithms (KNN,Random Forest Classifier,Gradient Boosting Classifier).  
 
@@ -27,24 +27,19 @@ This project applies machine learning classification techniques to predict the q
 
    - Optimize performance with feature selection and hyperparameter tuning.  
 
-7. Model Evaluation 
+4. Model Evaluation 
 
     - Assess performance using accuracy, precision, recall, F1-score, and confusion matrix.  
 
     - Compare models to determine the most effective classifier for wine quality prediction.  
 
-9. Insights & Applications  
+5. Insights & Applications  
 
    - Demonstrate how machine learning can assist in automated quality assessment for the wine industry.  
 
    - Provide insights into which physicochemical features most strongly influence wine quality.  
 
-11. Future Enhancements 
-   
-   - Explore advanced techniques such as deep learning models.  
-   
-   - Deploy the trained model as a user-friendly web application (Flask/Streamlit).
-  
+
 ## Tools   
 
 * Programming Language - Python
@@ -95,61 +90,67 @@ Target Variable : `quality` – Wine quality score (0–10) rated by human taste
 ### Import
 To begin the project,first import the essential Python libraries( Numpy,Pandas) that will help us handle data and perform computations. To better understand the dataset and identify patterns,import Python’s visualization libraries like Matplotlib,Seaborn. Next import StandardScaler that standardizes features by removing the mean and scaling to unit variance. Then import regression algorithms from the scikit-learn library. To measure how well these machine learning models predict insurance charges, import evaluation metrics like mean_absolute_error,mean_squared_error,r2_score from the scikit-learn library.
 
-<img width="1402" height="144" alt="Screenshot 2025-09-03 at 12 26 58" src="https://github.com/user-attachments/assets/14baaad5-c7ac-4a55-a23e-2279e4bd8c19" />
+<img width="758" height="144" alt="Screenshot 2025-09-04 at 09 00 59" src="https://github.com/user-attachments/assets/8cb3ac0a-865f-4d3d-89b6-3d6505896844" />
 
-<img width="1395" height="290" alt="Screenshot 2025-09-03 at 12 27 21" src="https://github.com/user-attachments/assets/287d913c-e849-4704-a64e-f40b72ec5ade" />
+
+<img width="1368" height="301" alt="Screenshot 2025-09-04 at 09 01 09" src="https://github.com/user-attachments/assets/82b0e75d-aa21-4879-8393-97cddb6ee586" />
+
 
 
 ### load the dataset into our Python environment
 
-<img width="1577" height="425" alt="Screenshot 2025-09-03 at 12 28 30" src="https://github.com/user-attachments/assets/f16cd380-8eec-45c6-8878-04247dd70ddd" />
+<img width="1521" height="421" alt="Screenshot 2025-09-04 at 09 01 26" src="https://github.com/user-attachments/assets/bb93ee3a-f7ee-447f-b81c-c9b38af36ef6" />
+
 
 ### Understanding Dataset
 
 Find how many no of columns and rows in the dataset
 
-<img width="1294" height="101" alt="Screenshot 2025-09-03 at 12 43 30" src="https://github.com/user-attachments/assets/99878854-9b40-4a11-bb65-e837de04e531" />
+<img width="339" height="114" alt="Screenshot 2025-09-04 at 09 01 39" src="https://github.com/user-attachments/assets/25291558-23ec-4477-9253-001bc40dfeb4" />
+
 
 check the columns names
 
-<img width="1390" height="187" alt="Screenshot 2025-09-03 at 12 43 47" src="https://github.com/user-attachments/assets/0be1ceb2-7698-41c5-a8af-5234cb17a7a6" />
-
+<img width="1096" height="192" alt="Screenshot 2025-09-04 at 09 02 04" src="https://github.com/user-attachments/assets/17011676-e37e-4f9d-934d-34986b7e66bf" />
 
 
 Summary of the dataset
 
+<img width="882" height="631" alt="Screenshot 2025-09-04 at 09 02 18" src="https://github.com/user-attachments/assets/4a76d40a-d179-4df1-85dc-2d5913e6b292" />
 
-<img width="889" height="642" alt="Screenshot 2025-09-03 at 12 44 02" src="https://github.com/user-attachments/assets/1e3afc52-a3bd-4b39-9c1b-04dbfc401b1f" />
 
 
 ### Exploratory Data Analysis
 
 
+
 #### Handling Missing values
 
 
-<img width="420" height="460" alt="Screenshot 2025-09-03 at 12 44 17" src="https://github.com/user-attachments/assets/cce9e361-0f16-44c8-b671-5f58d76f8d23" />
+<img width="590" height="470" alt="Screenshot 2025-09-04 at 09 02 28" src="https://github.com/user-attachments/assets/0ff70006-94da-4e9d-9f97-5abecd1bd315" />
 
 
 It shows no missing values in this dataset
 
 
-#### Finding Duplicates
+#### Finding Duplicates & Removing duplicates
 
-<img width="434" height="40" alt="Screenshot 2025-09-03 at 12 44 44" src="https://github.com/user-attachments/assets/e2b5bc77-752e-4458-afae-7affd1f291b7" />
+
+<img width="458" height="51" alt="Screenshot 2025-09-04 at 09 02 41" src="https://github.com/user-attachments/assets/a9d725d4-aeec-4042-bd8f-152cadf58dc5" />
 
 shows 240 rows are duplicates
 
 Removing duplicates
 
-<img width="543" height="44" alt="Screenshot 2025-09-03 at 12 45 18" src="https://github.com/user-attachments/assets/ae222dd7-953c-4629-a57a-145581e86b5c" />
+<img width="566" height="48" alt="Screenshot 2025-09-04 at 09 02 51" src="https://github.com/user-attachments/assets/0dc7b7bf-6575-4322-96ea-e91ea8f4bf2d" />
 
 
-#### check how values are spread for each feature
+#### check how values are distributed for each feature
 
 Knowing the distribution of features is important because it helps identify skewness or outliers in data. Also it can suggest if scaling or transformations (like log, standardization) are needed.
 
- <img width="1199" height="225" alt="Screenshot 2025-09-03 at 13 22 14" src="https://github.com/user-attachments/assets/8616697f-36b9-4cf0-ab6b-549fa8f2f0f0" />
+ <img width="873" height="189" alt="Screenshot 2025-09-04 at 09 03 25" src="https://github.com/user-attachments/assets/ae392494-cebf-4ef9-b432-214653945519" />
+
 
 loop iterates over through all independent features in the wine dataset. Uses Seaborn’s histplot to plot the distribution of each feature. kde=True → This makes it easier to understand the underlying distribution pattern.
 
@@ -175,7 +176,7 @@ loop iterates over through all independent features in the wine dataset. Uses Se
 
 <img width="1345" height="966" alt="Screenshot 2025-09-03 at 18 04 37" src="https://github.com/user-attachments/assets/3f82ee83-fc76-4ff2-b5b8-2fd28d9771ef" />
 
-##### OBSERVATIONS FROM CORRELATION MATRIX
+#### OBSERVATIONS FROM CORRELATION MATRIX
 
 * fixed acidity vs citric acid	+0.67	Wines with more fixed acidity tend to have more citric acid (they’re both acids).
 
@@ -207,11 +208,8 @@ Relate to Your Target (quality) . Look at correlations with quality:
 * sulphates	 +0.25	Somewhat positive (preservative effect)
 
 
-#### Visualize Relationship 
 
-Visualization supports the numerical correlation values we saw in the heatmap. 
-
-##### Visualize how Alcohol content affects wine Quality
+#### Visualize how Alcohol content affects wine Quality
 
 Below scatterplot shows how individual wines are distributed with respect to alcohol content (x-axis) and quality score (y-axis). sns.regplot(..., scatter=False) draws a regression line (best fit line). The red line shows the overall trend in the relationship.
 
@@ -220,7 +218,7 @@ Below scatterplot shows how individual wines are distributed with respect to alc
 <img width="701" height="682" alt="Screenshot 2025-09-03 at 20 36 45" src="https://github.com/user-attachments/assets/0c3d6ded-be10-4952-b6b4-3420e38f0d9e" />
 
 
-##### Visualize how volatile acidity affects wine quality
+#### Visualize how volatile acidity affects wine quality
 
 
 <img width="693" height="675" alt="Screenshot 2025-09-03 at 22 19 36" src="https://github.com/user-attachments/assets/981e6538-66c5-45c2-b743-98751872a78d" /> 
@@ -237,17 +235,19 @@ Below scatterplot shows how individual wines are distributed with respect to alc
 
 ### Data Preprocessessing
 
+
 #### Transforming highly skewed features
 
 First identify  Features with high skewness 
 
-<img width="1267" height="448" alt="Screenshot 2025-09-03 at 22 33 12" src="https://github.com/user-attachments/assets/eb6cdfab-bb85-4d72-8753-053d5198119f" />
+
+<img width="1230" height="498" alt="Screenshot 2025-09-04 at 09 17 22" src="https://github.com/user-attachments/assets/14e68fa6-1269-42de-9049-2f0ddaf0a5ec" />
 
 
 Transforming highly skewed features.(>_70) use np.sqrt when skew is moderate and that column data ≥ 0.
 
 
-<img width="1064" height="437" alt="Screenshot 2025-09-03 at 22 34 56" src="https://github.com/user-attachments/assets/c1dc5e2d-4516-4e07-af69-c8ca521b9373" />
+<img width="1128" height="440" alt="Screenshot 2025-09-04 at 09 18 15" src="https://github.com/user-attachments/assets/b682f641-8373-49ff-9400-d054637e4926" />
 
 
 #### Converting the numeric wine quality scores into categorical labels
@@ -263,11 +263,11 @@ High quality → 8–10
 
 Here I create a function that takes a wine’s quality numeric score as input and returns one of the three categories.
 
-<img width="707" height="267" alt="Screenshot 2025-09-03 at 22 43 36" src="https://github.com/user-attachments/assets/0c976c05-a18b-43c0-8215-246514b0ddfd" />
+<img width="1154" height="283" alt="Screenshot 2025-09-04 at 09 20 29" src="https://github.com/user-attachments/assets/a70efbad-ffd3-456d-85ed-b4493abbb413" />
 
 apply this function to the dataframe wine_df
 
-<img width="903" height="64" alt="Screenshot 2025-09-03 at 22 44 12" src="https://github.com/user-attachments/assets/eb02cc54-2d2c-4986-889b-e4af8e892444" />
+<img width="979" height="52" alt="Screenshot 2025-09-04 at 09 20 40" src="https://github.com/user-attachments/assets/8a1296bd-4d73-4627-8de6-3a0f715aca52" />
 
 
 
@@ -279,40 +279,114 @@ The feature 'residual sugar' has very low correlation with the target (quality).
 <img width="753" height="54" alt="Screenshot 2025-09-03 at 22 52 14" src="https://github.com/user-attachments/assets/758536e2-6102-4a7f-8016-17692b8a92c9" />
 
 
+#### In machine learning,always separate independent variables(X) and targets (Y)
+
+
+<img width="1156" height="80" alt="Screenshot 2025-09-04 at 10 50 42" src="https://github.com/user-attachments/assets/58c03dc5-5269-46c2-b4c3-6c20a12c91b3" />
+
+#### Splitting data
+
+<img width="1207" height="85" alt="Screenshot 2025-09-04 at 10 50 55" src="https://github.com/user-attachments/assets/b6c89ca2-f6f5-4328-aa18-3203ea9aac33" />
+
+
+#### Feature Scaling
+
+Scaling ensures all features contribute fairly.
+
+<img width="675" height="111" alt="Screenshot 2025-09-04 at 10 52 54" src="https://github.com/user-attachments/assets/39bd1745-40fd-4d8b-9682-532056c0f1a3" />
+
+ 
+Computes the mean (μ) and standard deviation (σ) of each feature in the training set and applies scaling using those values.
+
+
+#### Model Training
+
+Model training using K-Nearest Neighbors classifier
+
+<img width="1050" height="91" alt="Screenshot 2025-09-06 at 19 45 22" src="https://github.com/user-attachments/assets/33f3c2b0-afee-49e3-ba26-c990d9acb448" />
+
+
+The trained K-Nearest Neighbors classifier (Knn) to make predictions on the test dataset (X_test).
+
+<img width="477" height="54" alt="Screenshot 2025-09-06 at 19 49 10" src="https://github.com/user-attachments/assets/5ad3d79b-689b-4d99-ac8f-5ce629e451bc" />
+
+
+Model training using Random Forest classifier
+
+<img width="896" height="97" alt="Screenshot 2025-09-06 at 19 50 22" src="https://github.com/user-attachments/assets/a5ec0225-dbd4-4c68-810e-8a76cd0fd979" />
+
+The trained Random Forest classifier to make predictions on the test dataset (X_test).
+
+<img width="562" height="75" alt="Screenshot 2025-09-06 at 19 50 46" src="https://github.com/user-attachments/assets/f48b8b65-8462-4d46-bb40-4146463a4e26" />
+
+
+Model training using GradientBoosting classifier
+
+<img width="1356" height="86" alt="Screenshot 2025-09-06 at 19 54 25" src="https://github.com/user-attachments/assets/98106039-6758-463e-8b9b-cd6732538158" />
+
+
+The trained GradientBoosting classifier to make predictions on the test dataset (X_test).
+
+<img width="488" height="74" alt="Screenshot 2025-09-06 at 19 55 04" src="https://github.com/user-attachments/assets/2dedc03a-4a22-4f6b-bc58-da365c0657a7" />
+
+
+#### Evaluating Model
+
+##### To evaluate the performance of the K-Nearest Neighbors (KNN) Classifier
+
+First,used a confusion matrix. The matrix compares the actual wine quality categories (low, medium, high) with the model’s predictions. The diagonal cells 
+represent correct classifications, while off-diagonal cells represent misclassifications.
+
+
+<img width="542" height="533" alt="confusion_matrix_wine" src="https://github.com/user-attachments/assets/2a7154fa-9938-4eab-bbc0-c792beeede21" />
+
+
+The model has a bias toward predicting the "High-quality" class (Class 2). Out of 254 actual high-quality wines, all were correctly predicted as High.
+
+It achieves perfect accuracy for high-quality wines but completely fails for low- and medium-quality wines.
+
+While the overall accuracy may appear high, the model’s performance is poor for minority classes, making it unsuitable for real-world scenarios where accurate classification across all quality levels is essential.
 
 
 
+<img width="953" height="360" alt="Accuracy" src="https://github.com/user-attachments/assets/4510e0f1-6255-42f3-bb09-9252446b964c" />
+
+
+The KNN model achieved a high overall accuracy of 93%, which at first glance suggests good performance. However, when I examine precision (31%) and recall (33%), it becomes clear that the model performs poorly on minority classes (low and medium wine quality).
+
+
+##### To evaluate the performance of the Random Forest Classifier
+
+
+<img width="621" height="549" alt="Confusion_matrix_wine2" src="https://github.com/user-attachments/assets/bbcc9067-3ac6-43e7-a419-5914e4eb868d" />
+
+
+The model achieves perfect accuracy for class 2 but performs poorly on classes 0 and 1. This indicates that the model is heavily biased toward predicting class 2, regardless of whether the true class is 0, 1, or 2.
+
+
+<img width="977" height="383" alt="Accuracy2" src="https://github.com/user-attachments/assets/c72cd96e-8ace-4bfd-b665-f0d93a895577" />
+
+
+Although the model performs extremely well in identifying class 2, it fails to correctly classify any samples from classes 0 and 1. This imbalance leads to deceptively high accuracy, but low precision and recall when considering all classes equally.
 
 
 
+##### To evaluate the performance of the Gradient Boosting Classifier
+
+
+<img width="593" height="551" alt="confusion_matrix_wine3" src="https://github.com/user-attachments/assets/4138cdeb-ef51-4587-88d7-f8c644e402ed" />
+
+Since class 2 dominates the dataset, the model achieves a high number of correct predictions overall. The model consistently predicts class 2 for most inputs, including many belonging to classes 0 and 1.
 
 
 
+<img width="902" height="376" alt="Accuracy3" src="https://github.com/user-attachments/assets/98987771-0688-4fb0-bc0c-19d3194d25f7" />
+
+GBC has slightly lower accuracy (91%) but better precision (0.38) and recall (0.35).
+
+This shows that GBC is slightly better at handling minority classes (0 and 1), even though the dataset imbalance still strongly affects the results.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Recommendations : Apply techniques such as SMOTE (Synthetic Minority Over-sampling Technique), ADASYN, or class-weight adjustments in the classifier to give more importance to minority classes.
 
 
